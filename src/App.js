@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Modal from "./Modal";
+import GlobalStyles from "./GlobalStyles";
 
 const Container = styled.div`
   background-color: black;
@@ -21,6 +23,7 @@ const Button = styled.button`
   border-radius: 10px;
   outline: none;
   border: none;
+  cursor: pointer;
 `;
 
 const App = () => {
@@ -28,7 +31,9 @@ const App = () => {
   const toggleModal = () => setShowModal((prev) => !prev);
   return (
     <Container>
-      <Button onClick={toggleModal}>Show Modal!</Button>
+      <GlobalStyles />
+      <Button onClick={toggleModal}>Modal Button!!</Button>
+      <Modal showModal={showModal} setShowModal={setShowModal} />
     </Container>
   );
 };
